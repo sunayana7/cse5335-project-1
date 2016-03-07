@@ -11,23 +11,10 @@ th, td {
     border: 1px solid black;
 }
 </style>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 
 <script>
 
-$(document).ready(function() {
 
-});
 </script>
 <script>
 function clickHandler() {
@@ -41,8 +28,33 @@ function clickHandler() {
 					+ "<td>" + data.mydata[i].state  + "</td></tr>";
 				}
 				$("#mytable").html(table);
-			});
-        
+			});  
+
+}
+function populateMap(){
+var map;
+    var elevator;
+    var myOptions = {
+        zoom: 2,
+        minZoom: 2,
+        maxZoom:13,
+        center: new google.maps.LatLng(0, 0),
+        mapTypeId: 'terrain'
+    };
+    map = new google.maps.Map($('#multi_markers')[0], myOptions);
+
+$.get( "/data", function( data ) {
+	for(var i=0;i<data.mydata.length;i++) {
+		            var p = data.mydata[i]
+		            var latlng = new google.maps.LatLng(p.latitude, p.longitude);
+		            new google.maps.Marker({
+		                position: latlng,
+		                map: map
+		         
+		            })
+		        }
+  	
+  });
 }
 </script>
 </head>
@@ -60,7 +72,10 @@ function clickHandler() {
 <br>
 <br>
 <br>
-<div id="googleMap" style="width:500px;height:380px;"></div>
+<input type = "button" Value = "Click to see points on map" onclick="populateMap();"/>
+<div style='width: 900px;'>
+  <div id="multi_markers" style='width: fit; height: 500px;'></div>
+</div>
 <br>
 <br>
 </body>
