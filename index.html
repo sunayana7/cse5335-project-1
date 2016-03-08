@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <style>
 body {
-    background-color: lightgray;
+   background-color:#ffc299;
 }
-th, td {
-    border: 1px solid black;
+tr {
+background-color: lightgray;
 }
 </style>
-
-<script>
-
-
-</script>
 <script>
 function clickHandler() {
             $.get('/data', function(data) {
@@ -38,7 +34,7 @@ var map;
         zoom: 2,
         minZoom: 2,
         maxZoom:13,
-        center: new google.maps.LatLng(0, 0),
+        center: new google.maps.LatLng(41.850033, -87.6500523),
         mapTypeId: 'terrain'
     };
     map = new google.maps.Map($('#multi_markers')[0], myOptions);
@@ -59,24 +55,30 @@ $.get( "/data", function( data ) {
 </script>
 </head>
 <body>
-
+<div align="center">
 <div id="div1"><h2>WELCOME</h2></div>
-<h2> CSE 5335 Project 1  Spring 2016 </h2>
+<h3>   CSE 5335 Web Data Management </h3>
+<h4>  Project 1  Spring 2016 </h4>
 
-<input type="button" id="#mybutton" onclick="clickHandler();" value="Click to see content" />
+<input type="button" id="#mybutton" class="btn btn-primary"onclick="clickHandler();" value="Click to see content" />
 <br>
 <br>
 <br>
-<table id="mytable">
+
+<table id="mytable" class="table table-bordered">
 </table>
 <br>
 <br>
 <br>
-<input type = "button" Value = "Click to see points on map" onclick="populateMap();"/>
+
+<input type = "button" class="btn btn-primary" Value = "Click to see points on map" onclick="populateMap();"/>
+<br>
+<br>
 <div style='width: 900px;'>
   <div id="multi_markers" style='width: fit; height: 500px;'></div>
 </div>
 <br>
 <br>
+</div>
 </body>
 </html>
