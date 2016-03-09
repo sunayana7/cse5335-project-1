@@ -1,12 +1,19 @@
 {
-  "name": "webdata",
+  "name": "project1",
   "version": "1.0.0",
-  "description": "5335 project 1 ",
+  "description": "CSE 5335 Project 1 - Spring 2016\r",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.4"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "path": "^0.12.7"
+  }
 }
