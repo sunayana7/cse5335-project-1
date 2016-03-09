@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var port = Number(process.env.PORT) || 3000;
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -24,5 +25,5 @@ app.get('/data', function(req, res) {
 });
 //console.log(obj.data);
 
-app.listen(8080);
-console.log("Server running at 8080");
+app.listen(3000);
+//console.log("Server running at 3000");
