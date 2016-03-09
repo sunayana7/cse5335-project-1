@@ -33,8 +33,10 @@ Asynchronous APIs. It runs single threaded event based loop which is always read
 •	 Other components installed for the project
    
    I have used express and path dependencies in my node.js and I had to install these by the following commands.
-     npm install express --save
-     npm install path --save
+   
+         npm install express --save
+         npm install path --save
+         
    This adds the node_modules folder to my project.
 
 
@@ -45,9 +47,9 @@ Asynchronous APIs. It runs single threaded event based loop which is always read
    
           git init
           git commit -m "First"
-          git remote add origin "https://github.com/sunayana-gowda/ssg7621-cse5355-project-1.git"
+          git remote add origin "https://github.com/sunayana7/ssg7621-cse5355-project-1.git"
           git push -u origin master
-          git clone https://github.com/sunayana-gowda/ssg7621-cse5355-project-1.git
+          git clone https://github.com/sunayana7/ssg7621-cse5355-project-1.git
   
    Heroku
    
