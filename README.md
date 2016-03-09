@@ -58,5 +58,13 @@ Asynchronous APIs. It runs single threaded event based loop which is always read
          git push heroku master
 
    
+References
 
+1. https://nodejs.org/en/
+
+2. https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
+3. https://devcenter.heroku.com/articles/github-integration
+
+4. http://api.jquery.com/jquery.getjson/
 
